@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import verify_gstin_view
+from .views import submit_gstin_details_view
 
 urlpatterns = [
-    path('verify-gstin/', verify_gstin_view, name='verify_gstin'),
+    path('submit-tax-details/', submit_gstin_details_view, name='submit_tax_details'),
 ]

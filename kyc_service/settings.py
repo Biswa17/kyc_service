@@ -113,6 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'kyc_service.utils.custom_exception_handler'
+}
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

@@ -1,8 +1,15 @@
 from rest_framework import serializers
 from .models import GstinVerification
+from rest_framework.validators import UniqueValidator
 
 class GstinVerificationSerializer(serializers.ModelSerializer):
-    gstin = serializers.CharField(max_length=15, required=False, allow_null=True, allow_blank=True)
+    gstin = serializers.CharField(
+        max_length=15, 
+        required=False, 
+        allow_null=True, 
+        allow_blank=True,
+        validators=[UniqueValidator(queryset=GstinVerification.objects.all(), message="This GSTIN already exists.")]
+    )
     pan = serializers.CharField(max_length=10, required=False, allow_null=True, allow_blank=True)
 
     class Meta:

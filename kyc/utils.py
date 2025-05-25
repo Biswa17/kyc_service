@@ -58,3 +58,25 @@ def fetch_gstin_detailed(gstin_number="21AAXXXXXXXXXXX", consent="Y"):
     }
 
     return make_api_request(method="POST", url=api_url, headers=headers, json_data=payload)
+
+def fetch_gstin_by_pan(pan_number="AAAXXXXXXX", consent="Y"):
+    """
+    Fetches GSTIN details by PAN from the external API.
+    """
+    api_url = "https://stoplight.io/mocks/gridlines/gridlines-api-docs/133154717/gstin-api/fetch-by-pan"
+    api_key = "123" # Default API key from cURL example
+
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Prefer": "code=200",
+        "X-API-Key": api_key,
+        "X-Auth-Type": "API-Key",
+        "X-Reference-ID": "" 
+    }
+    payload = {
+        "pan_number": pan_number,
+        "consent": consent
+    }
+
+    return make_api_request(method="POST", url=api_url, headers=headers, json_data=payload)

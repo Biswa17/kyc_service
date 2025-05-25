@@ -16,7 +16,5 @@ class GstinVerificationSerializer(serializers.ModelSerializer):
 
         if not gstin and not pan:
             raise serializers.ValidationError("Either GSTIN or PAN must be provided.")
-        if gstin and pan:
-             raise serializers.ValidationError("Only one of GSTIN or PAN should be provided.")
 
         return data

@@ -9,7 +9,7 @@ import os
 import json
 
 @api_view(['POST'])
-def submit_gstin_details_view(request):
+def submit_gstin_or_pan_view(request):
     serializer = GstinVerificationSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

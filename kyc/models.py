@@ -43,3 +43,50 @@ class GstinVerification(models.Model):
 
     def __str__(self):
         return self.gstin
+
+
+class BankDetails(models.Model):
+    contact_person_name = models.CharField(max_length=255, null=True, blank=True)
+    contact_person_phone_number = models.CharField(max_length=20, null=True, blank=True)
+    address_line_1 = models.CharField(max_length=255, null=True, blank=True)
+    address_line_2 = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    state = models.CharField(max_length=100, null=True, blank=True)
+    pin_code = models.CharField(max_length=10, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True)
+
+    user_service = models.CharField(max_length=255, null=True, blank=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "Bank_Details"
+
+    def __str__(self):
+        return f"{self.contact_person_name} - {self.user_id}" if self.contact_person_name else str(self.user_id)
+
+
+class CommunicationAddress(models.Model):
+    contact_person_name = models.CharField(max_length=255, null=True, blank=True)
+    contact_person_phone_number = models.CharField(max_length=20, null=True, blank=True)
+    address_line_1 = models.CharField(max_length=255, null=True, blank=True)
+    address_line_2 = models.CharField(max_length=255, null=True, blank=True)
+    address_line_3 = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    state = models.CharField(max_length=100, null=True, blank=True)
+    pin_code = models.CharField(max_length=10, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True)
+
+    user_service = models.CharField(max_length=255, null=True, blank=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "Communication_Address"
+
+    def __str__(self):
+        return f"{self.contact_person_name} - {self.user_id}" if self.contact_person_name else str(self.user_id)

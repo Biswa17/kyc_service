@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('kyc/', include('kyc.urls')),
+    path('api/kyc/', include('kyc.urls')),
 ]

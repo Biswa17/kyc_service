@@ -11,9 +11,10 @@ class GstinVerification(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     
-    user_service = models.CharField(max_length=255)
-    user_id = models.CharField(max_length=255)
+    user_service = models.CharField(max_length=255, null=True, blank=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
 
+    
     # Additional Fields
     company_name = models.CharField(max_length=255, null=True, blank=True)
     company_type = models.CharField(max_length=100, null=True, blank=True)

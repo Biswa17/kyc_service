@@ -35,7 +35,7 @@ def make_api_request(method, url, headers=None, json_data=None, data=None, param
         print(f"JSON Decode Error: {errj} - Response text: {response.text if 'response' in locals() and hasattr(response, 'text') else 'N/A'}")
         return None # Or raise
 
-def fetch_gstin_detailed_details(gstin_number="21AAXXXXXXXXXXX", consent="Y"):
+def fetch_gstin_detailed(gstin_number="21AAXXXXXXXXXXX", consent="Y"):
     """
     Fetches detailed GSTIN details from the external API.
     """

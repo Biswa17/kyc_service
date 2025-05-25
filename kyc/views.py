@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import GstinVerification
 from .serializers import GstinVerificationSerializer
-from .utils import fetch_gstin_detailed_details # Import the function
+from .utils import fetch_gstin_detailed # Import the function
 import requests # requests is already imported, but ensure it's available if not.
 import os
 import json
